@@ -37,6 +37,11 @@ const calculate = () => {
 const clean = () => {
     const inputHeight = document.getElementById('input-height').value = ''
     const inputWeight = document.getElementById('input-weight').value = ''
+    const imcValue = document.getElementById('imc-value')
+    const message = 'Seu IMC é:'
+
+
+    imcValue.innerHTML = `${message}`
 
 }
 
