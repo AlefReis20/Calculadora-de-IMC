@@ -10,6 +10,10 @@ const calculate = () => {
     imcValue.innerHTML = `${message}
     ${((inputWeight) / (inputHeight*2)).toFixed(2)}`
 
+    if(inputWeight === ''  && inputHeight === '' ) {
+        alert('Insira os valores para calcular.')
+    }
+
     if ((inputWeight / (inputHeight*2)) < 18.5) {
         alert(`Pessoa está abaixo do peso, imc igual a ${((inputWeight) / (inputHeight*2)).toFixed(2)}.`)
     } 
@@ -29,9 +33,10 @@ const calculate = () => {
     else if ((inputWeight / inputHeight*2) >= 35 && (inputWeight / (inputHeight*2)) <= 39.9) {
         alert(`Pessoa está com obesidade grau II, imc igual a ${((inputWeight) / (inputHeight*2)).toFixed(2)}.`)
     }
-    else {
+    else if((inputWeight / inputHeight*2) > 40) {
         alert(`Pessoa está com obesidade grau III, imc igual a ${((inputWeight) / (inputHeight*2)).toFixed(2)}.`)
     }
+
 }
 
 const clean = () => {
@@ -40,10 +45,10 @@ const clean = () => {
     const imcValue = document.getElementById('imc-value')
     const message = 'Seu IMC é:'
 
-
     imcValue.innerHTML = `${message}`
-
 }
 
 calculateButton.addEventListener('click',calculate)
 cleanButton.addEventListener('click',clean)
+
+console.log(calculateButton)
